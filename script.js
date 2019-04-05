@@ -12,13 +12,15 @@ function addList() {
 	let elem = document.getElementsByName('newElem')[0].value;
 	//console.log(elem);
 	
-	// destination du nouvelle élément
+	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
-	// créer le nouvel élément
+	// Create new element
 	let li = `<li>${elem}</li>`;
-	// insertion de l'élément
+	// Insert element
 	ul.insertAdjacentHTML('beforeend', li);
 
 	//console.log(li);
 
+	// Empty field
+	document.getElementsByName('newElem')[0].value='';
 }
