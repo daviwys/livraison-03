@@ -1,0 +1,27 @@
+html, body {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	font-size: 10px;
+	font-family: Verdana, Arial, Serif;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+/* /!\ revoir la position en fonction du viewport /!\ */
+main {
+	text-align: center;
+	position: relative;
+	left: 40%;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	font-size: 1.6em;
+	text-align: left;
+}
