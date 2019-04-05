@@ -24,7 +24,7 @@ function addList() {
 	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
 	// Create new element
-	let li = `<li onclick="this.classList.toggle('crossed')">${elem}</li>`;
+	let li = `<li class="deleteLi"><img src="img/trash.png" class="icone" /> &nbsp;&nbsp;&nbsp; </li><li onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
 	// Insert element
 	ul.insertAdjacentHTML('beforeend', li);
 

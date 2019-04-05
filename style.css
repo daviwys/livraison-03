@@ -26,6 +26,15 @@ li {
 	text-align: left;
 }
 
-.crossed {
+.crossedLi {
 	text-decoration: line-through;
+}
+
+.deleteLi {
+	float: left;
+}
+
+.icone {
+	width: 15px;
+	height: 15px;
 }
