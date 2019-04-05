@@ -17,7 +17,9 @@ function addList() {
 
 	// comparer elem à la liste : ne pas ajouter si existe déjà !
 	let list = document.getElementsByTagName('li');
-	console.log(list);
+	for(let item of list){
+		if( elem == item.textContent ) return console.log( 'Item déjà présent !');
+	}
 
 	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
