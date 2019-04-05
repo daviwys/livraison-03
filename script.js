@@ -6,8 +6,12 @@ document.getElementsByName('newElem')[0].addEventListener('keyup', action => { (
 function addList() {
 
 	let elem = document.getElementsByName('newElem')[0].value;
-	//console.log(elem);
 	
+	// Field empty check
+	if(elem == ''){
+		return console.log( 'champ vide :(' )	;
+	}
+
 	// Capitalize 1st letter
 	elem = capitalize(elem);
 
