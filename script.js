@@ -1,7 +1,7 @@
 'use strict';
 
 
-document.getElementsByName('newElem')[0].addEventListener('keydown', action => { (action.key == 'Enter') ? addList() : null });
+document.getElementsByName('newElem')[0].addEventListener('keyup', action => { (action.key == 'Enter') ? addList() : null });
 
 function addList() {
 
@@ -10,6 +10,10 @@ function addList() {
 	
 	// Capitalize 1st letter
 	elem = capitalize(elem);
+
+	// comparer elem à la liste : ne pas ajouter si existe déjà !
+	let list = document.getElementsByTagName('li');
+	console.log(list);
 
 	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
