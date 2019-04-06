@@ -58,4 +58,12 @@ function capitalize(str) {
 
 function darkMode() {
 	document.getElementsByTagName('link')[0].href = 'dark.css';
+	document.getElementsByTagName('button')[0].setAttribute('onclick', `whiteMode()`);
+	document.getElementsByTagName('button')[0].innerHTML = 'White mode';
+}
+
+function whiteMode() {
+	document.getElementsByTagName('link')[0].href = 'style.css';
+	document.getElementsByTagName('button')[0].setAttribute('onclick', `darkMode()`);
+	document.getElementsByTagName('button')[0].innerHTML = 'Dark mode';
 }
