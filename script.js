@@ -3,6 +3,19 @@
 
 document.getElementsByName('newElem')[0].addEventListener('keyup', action => { (action.key == 'Enter') ? addList() : null });
 
+function deleteLi(li) {// FONCTION À CONTINUER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*	let elem1 = document.getElementsByName(li + 'b');
+	let elem2 = document.getElementsByName(li + 'a');
+	let parent1 = document.getElementsByTagName('ul')[0];
+	parent1.removeChild(elem1);
+	parent1.removeChild(elem2);*/
+
+	let elemLi1 = document.getElementsByName(li + 'b')[0];
+	elemLi1.style.cssText = 'display:none;';
+	let elemLi2 = document.getElementsByName(li + 'a')[0];
+	elemLi2.style.cssText = 'display:none;';
+}
+
 function addList() {
 
 	let elem = document.getElementsByName('newElem')[0].value;
@@ -24,7 +37,9 @@ function addList() {
 	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
 	// Create new element
-	let li = `<li class="deleteLi"><img src="img/trash.png" class="icone" /> &nbsp;&nbsp;&nbsp; </li><li onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
+	let nameLi = Date.now();
+	//let li = `<li name="${nameLi + 'a'}" class="deleteLi"><a href="#" onclick="deleteLi(${nameLi})" title="Delete"><img src="img/trash.png" class="icone" /></a> &nbsp;&nbsp;&nbsp; </li><li name="${nameLi + 'b'}" onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
+	let li = `<li name="${nameLi + 'a'}" class="deleteLi"><a href="#" onclick="deleteLi(${nameLi})" title="Delete"><img src="img/trash.png" class="icone" /></a> &nbsp;&nbsp;&nbsp; </li><li name="${nameLi + 'b'}" onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
 	// Insert element
 	ul.insertAdjacentHTML('beforeend', li);
 
