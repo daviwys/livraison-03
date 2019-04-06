@@ -7,6 +7,8 @@ html, body {
 	font-family: Verdana, Arial, Serif;
 	color: #fff;
 	background-color: #000;
+	background-image: url('img/background-post-it-dark.jpg');
+	background-repeat: repeat;
 }
 
 h1 {

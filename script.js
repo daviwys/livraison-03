@@ -1,6 +1,5 @@
 'use strict';
 
-
 document.getElementsByName('newElem')[0].addEventListener('keyup', action => { (action.key == 'Enter') ? addList() : null });
 
 function deleteLi(li) {// FONCTION À CONTINUER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -22,6 +21,7 @@ function addList() {
 	
 	// Field empty check
 	if(elem == ''){
+		alert('Champ vide !');
 		return console.log( 'champ vide :(' )	;
 	}
 
@@ -31,7 +31,10 @@ function addList() {
 	// comparer elem à la liste : ne pas ajouter si existe déjà !
 	let list = document.getElementsByTagName('li');
 	for(let item of list){
-		if( elem == item.textContent ) return console.log( 'Item déjà présent !');
+		if( elem == item.textContent ) {
+			alert('Item déjà présent !');
+			return console.log( 'Item déjà présent !');
+		}
 	}
 
 	// destination of new element
