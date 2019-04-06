@@ -54,5 +54,8 @@ function capitalize(str) {
 	let strTab = str.split('');
 	strTab[0] = strTab[0].toUpperCase();
 	return strTab.join('');
+}
 
+function darkMode() {
+	document.getElementsByTagName('link')[0].href = 'dark.css';
 }
