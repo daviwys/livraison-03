@@ -1,24 +1,36 @@
 'use strict';
 
 document.getElementsByName('newElem')[0].addEventListener('keyup', action => { (action.key == 'Enter') ? addList() : null });
+document.getElementsByName('qte')[0].addEventListener('keyup', action => { (action.key == 'Enter') ? addList() : null });
 
-function deleteLi(li) {// FONCTION À CONTINUER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-/*	let elem1 = document.getElementsByName(li + 'b');
-	let elem2 = document.getElementsByName(li + 'a');
-	let parent1 = document.getElementsByTagName('ul')[0];
-	parent1.removeChild(elem1);
-	parent1.removeChild(elem2);*/
-
+let count = 0;
+document.getElementsByName('count')[0].innerHTML = 'Qté = ' + count;
+function deleteLi(li) {
+/*
+	// hide item
 	let elemLi1 = document.getElementsByName(li + 'b')[0];
 	elemLi1.style.cssText = 'display:none;';
 	let elemLi2 = document.getElementsByName(li + 'a')[0];
 	elemLi2.style.cssText = 'display:none;';
+*/
+
+	let elemLi1 = document.getElementsByName(li + 'b')[0];
+	elemLi1.remove();
+	let elemLi2 = document.getElementsByName(li + 'a')[0];
+	elemLi2.remove();
+	// Delete <ul> if empty
+	let nbrLi = document.getElementsByTagName('li').length; 
+	if(nbrLi == 0) {
+		let ul = document.getElementsByTagName('ul')[0];
+		ul.remove();
+	}
+	count -= elemLi1.dataset.count ;
 }
 
 function addList() {
 
 	let elem = document.getElementsByName('newElem')[0].value;
-	
+	let quantity = +document.getElementsByName('qte')[0].value;
 	// Field empty check
 	if(elem == ''){
 		alert('Champ vide !');
@@ -50,14 +62,18 @@ function addList() {
 	// Create new element
 	let nameLi = Date.now();
 	//let li = `<li name="${nameLi + 'a'}" class="deleteLi"><a href="#" onclick="deleteLi(${nameLi})" title="Delete"><img src="img/trash.png" class="icone" /></a> &nbsp;&nbsp;&nbsp; </li><li name="${nameLi + 'b'}" onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
-	let li = `<li name="${nameLi + 'a'}" class="deleteLi"><a href="#" onclick="deleteLi(${nameLi})" title="Delete"><img src="img/trash.png" class="icone" /></a> &nbsp;&nbsp;&nbsp; </li><li name="${nameLi + 'b'}" onclick="this.classList.toggle('crossedLi')">${elem}</li>`;
+	let li = `<li name="${nameLi + 'a'}" data-count="${quantity}" class="deleteLi"><a href="#" onclick="deleteLi(${nameLi})" title="Delete"><img src="img/trash.png" class="icone" /></a> &nbsp;&nbsp;&nbsp; </li><li name="${nameLi + 'b'}" onclick="this.classList.toggle('crossedLi')">${elem} (${quantity})</li>`;
 	// Insert element
 	ul.insertAdjacentHTML('beforeend', li);
 
-	//console.log(li);
+	count += quantity;
+	document.getElementsByName('count')[0].innerHTML = `Qté = ${count}`;
 
 	// Empty field
 	document.getElementsByName('newElem')[0].value='';
+	document.getElementsByName('qte')[0].value='1';
+	// focus on newElem
+	document.getElementsByName('newElem')[0].focus();
 }
 
 function capitalize(str) {

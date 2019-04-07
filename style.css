@@ -61,6 +61,20 @@ input[type=text]:hover {
 	box-shadow: 0px 3px 10px 0px #000, 0px 10px 50px 0 #555;
 }
 
+input[type=number] {
+	margin-bottom: 10px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	background-color: #ff9;
+	padding: 6px;
+	font-size: 1.6em;
+	width: 1.em;
+}
+
+input[type=number]:hover {
+	transition: 0.3s;
+	box-shadow: 0px 3px 10px 0px #000, 0px 10px 50px 0 #555;
+}
 /* /!\ revoir la position en fonction du viewport /!\ */
 
 ul {
@@ -68,6 +82,10 @@ ul {
 	padding-left: 0px;
 	border: 8px solid #ff0;
 	border-radius: 5px;
+}
+
+ul:hover {
+	box-shadow: 0 3px 10px 0 #000, 0 10px 50px 0 #555;
 }
 
 li {
@@ -78,10 +96,11 @@ li {
 	background-color: #ff9;
 	color: #000;
 	border-bottom: 1px solid #777;
+	cursor: pointer;
 }
 
 .crossedLi {
-	text-decoration: line-through #ff9;
+	text-decoration: line-through #333;
 }
 
 .deleteLi {
@@ -95,4 +114,13 @@ li {
 
 .delete {
 	display: none;
+}
+
+p[name=count] {
+	background-color: #ff9;
+	display: inline;
+	font-size: 1.6em;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
 }
