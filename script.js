@@ -5,6 +5,7 @@ document.getElementsByName('qte')[0].addEventListener('keyup', action => { (acti
 
 let count = 0;
 document.getElementsByName('count')[0].innerHTML = 'Qté = ' + count;
+
 function deleteLi(li) {
 /*
 	// hide item
@@ -14,9 +15,11 @@ function deleteLi(li) {
 	elemLi2.style.cssText = 'display:none;';
 */
 
+	//let getElem = document.getElementsBy
 	let elemLi1 = document.getElementsByName(li + 'b')[0];
 	elemLi1.remove();
 	let elemLi2 = document.getElementsByName(li + 'a')[0];
+	count -= elemLi2.dataset.count;
 	elemLi2.remove();
 	// Delete <ul> if empty
 	let nbrLi = document.getElementsByTagName('li').length; 
@@ -24,7 +27,7 @@ function deleteLi(li) {
 		let ul = document.getElementsByTagName('ul')[0];
 		ul.remove();
 	}
-	count -= elemLi1.dataset.count ;
+	document.getElementsByName('count')[0].innerHTML = `Qté = ${count}`;
 }
 
 function addList() {
