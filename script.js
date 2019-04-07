@@ -37,6 +37,14 @@ function addList() {
 		}
 	}
 
+	let myUl = document.getElementsByTagName('ul').length;
+	if(myUl == 0) {
+		let ul = `<ul>
+			</ul>`;
+		let div = document.getElementsByTagName('div')[0];
+		div.insertAdjacentHTML('afterbegin', ul);	
+	}
+
 	// destination of new element
 	let ul = document.getElementsByTagName('ul')[0];
 	// Create new element
@@ -71,7 +79,3 @@ function whiteMode() {
 	document.getElementsByTagName('button')[0].innerHTML = 'Dark mode';
 }
 
-function hideUl() {
-	elem = document.main.div;
-	elem.style.display = 'none';
-}
