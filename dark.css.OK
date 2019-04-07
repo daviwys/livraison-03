@@ -1,0 +1,58 @@
+html, body {
+	margin: 5px;
+	padding: 5px;
+	margin: auto;
+	text-align: center;
+	font-size: 10px;
+	font-family: Verdana, Arial, Serif;
+	color: #fff;
+	background-color: #000;
+	background-image: url('img/background-post-it-dark.jpg');
+	background-repeat: repeat;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+main {
+	width: 50%;
+	margin: auto;
+	padding-bottom: 15px;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+/* /!\ revoir la position en fonction du viewport /!\ */
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+li {
+	font-size: 1.6em;
+	text-align: left;
+	padding: 5px;
+	background-color: #ff0;
+	color: #040;
+}
+
+.crossedLi {
+	text-decoration: line-through #ff0000;
+}
+
+.deleteLi {
+	float: left;
+}
+
+.icone {
+	width: 15px;
+	height: 15px;
+}
+
+.delete {
+	display: none;
+}
