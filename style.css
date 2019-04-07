@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Briberra;
+	src: url('Briberra.ttf');
+}
+
 html, body {
 	margin: 5px;
 	padding: 5px;
@@ -14,7 +19,10 @@ html {
 }
 
 h1 {
-	font-size: 3em;
+	font-family: Briberra, Verdana, serif;
+	font-size: 8em;
+	margin: 5px;
+	text-shadow: 0 0.03em 0 #ff0, 0 -0.03em 0 #ff0, 0.03em 0 0 #ff0, -0.03em 0 0 #ff0;
 }
 
 button {
@@ -43,7 +51,7 @@ input[type=text] {
 	margin-bottom: 10px;
 	border: 1px solid #333;
 	border-radius: 5px;
-	background-color: #ffff00;
+	background-color: #ff9;
 	padding: 6px;
 	font-size: 1.6em;
 }
@@ -58,19 +66,22 @@ input[type=text]:hover {
 ul {
 	list-style: none;
 	padding-left: 0px;
+	border: 8px solid #ff0;
+	border-radius: 5px;
 }
 
 li {
-	font-size: 1.6em;
+	font-family: Briberra, Verdana, serif;
+	font-size: 3.6em;
 	text-align: left;
 	padding: 5px;
-	background-color: #ff0;
+	background-color: #ff9;
 	color: #000;
 	border-bottom: 1px solid #777;
 }
 
 .crossedLi {
-	text-decoration: line-through #ff0000;
+	text-decoration: line-through #ff9;
 }
 
 .deleteLi {

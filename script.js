@@ -70,3 +70,8 @@ function whiteMode() {
 	document.getElementsByTagName('button')[0].setAttribute('onclick', `darkMode()`);
 	document.getElementsByTagName('button')[0].innerHTML = 'Dark mode';
 }
+
+function hideUl() {
+	elem = document.main.div;
+	elem.style.display = 'none';
+}
