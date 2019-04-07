@@ -20,9 +20,10 @@ html {
 
 h1 {
 	font-family: Briberra, Verdana, serif;
+	color: #ff0;
 	font-size: 8em;
 	margin: 5px;
-	text-shadow: 0 0.03em 0 #ff0, 0 -0.03em 0 #ff0, 0.03em 0 0 #ff0, -0.03em 0 0 #ff0;
+	text-shadow: 0 0.04em 0 #000, 0 -0.04em 0 #000, 0.04em 0 0 #000, -0.04em 0 0 #000;
 }
 
 button {
